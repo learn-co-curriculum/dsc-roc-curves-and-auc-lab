@@ -8,6 +8,8 @@ In this lab, we'll practice drawing ROC graphs, calculating AUC, and interpretin
 
 ## Objectives
 
+You will be able to:
+
 * Evaluate classification models using various metrics
 * Define and understand ROC and AUC
 
@@ -15,7 +17,7 @@ In this lab, we'll practice drawing ROC graphs, calculating AUC, and interpretin
 
 Start by repeating the previous modelling steps we have discussed. For this problem, you are given a dataset **mushrooms.csv**. You're first job is to train a LogisticRegression classifier on the dataset to determine whether the mushroom is **e**dible or **p**oisonous. The first column of the dataset *class* indicates whether or not the mushroom is poisonous or edible.
 
-## ** *For consistnecy use random_state=0**
+** For consistency use random_state=0**
 
 
 ```python
@@ -44,7 +46,7 @@ Next, use the false positive rate and true positive rate to plot the Receiver Op
 
 What do you notice about these ROC curves?
 
-# Your answer here
+## Your answer here
 
 ## Interpretation
 Look at the ROC curve graph from the lesson:  
@@ -69,7 +71,7 @@ fpr = #write the approximate fpr when tpr=.95
 ## Opinion
 In the case of heart disease that we've been talking about, do you find any of the above cases acceptable? How would you tune the model. Describe what this would mean in terms of the number of patients falsely scared of having heart disease and the risk of missing the warning signs for those who do actually have heart disease.
 
-# Your answer here.
+## Your answer here
 
 ## Summary
 
