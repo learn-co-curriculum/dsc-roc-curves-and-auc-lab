@@ -8,6 +8,8 @@ In this lab, we'll practice drawing ROC graphs, calculating AUC, and interpretin
 
 ## Objectives
 
+You will be able to:
+
 * Evaluate classification models using various metrics
 * Define and understand ROC and AUC
 
@@ -15,7 +17,7 @@ In this lab, we'll practice drawing ROC graphs, calculating AUC, and interpretin
 
 Start by repeating the previous modelling steps we have discussed. For this problem, you are given a dataset **mushrooms.csv**. You're first job is to train a LogisticRegression classifier on the dataset to determine whether the mushroom is **e**dible or **p**oisonous. The first column of the dataset *class* indicates whether or not the mushroom is poisonous or edible.
 
-## ** *For consistnecy use random_state=0**
+**For consistnecy use random_state = 0**
 
 
 ```python
@@ -356,7 +358,7 @@ plt.show()
 
 What do you notice about these ROC curves?
 
-# Your answer here
+## Your answer here
 Both have an AUC of 1.0, indicating their performance is perfect.
 
 ## Interpretation
@@ -382,7 +384,7 @@ fp = .22 #write the approximate fpr when tpr=.95
 ## Opinion
 In the case of heart disease that we've been talking about, do you find any of the above cases acceptable? How would you tune the model. Describe what this would mean in terms of the number of patients falsely scared of having heart disease and the risk of missing the warning signs for those who do actually have heart disease.
 
-# Your answer here.
+## Your answer here
 
 With such an important decision, such as detecting heart disease, we would hope for more accurate results. In my opinion, the True positive weight is the more important of the two in this scenario. That is, our true positive rate determines the percentage of patients with heart disease who we correctly identify and warn. The false positive rate is still very important, but I would rather accidently scare a few healthy patients and warn them of potentially having heart disease then having missed warnings. That said, the false positive rate becomes rather unacceptably high once the true positive rate exceeds .95. A .95 TPR indicates that out of 100 patients with heart disease we correctly warn 95 of them, but fail to warn 5. At the same time, this has a FPR of nearly .25 meaning that roughly one in four times we incorrectly warn a patient of heart disease when they are actually healthy.
 
