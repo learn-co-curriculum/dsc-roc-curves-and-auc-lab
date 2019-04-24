@@ -4,7 +4,7 @@
 
 ## Introduction 
 
-In this lab, we'll practice drawing ROC graphs, calculating AUC, and interpreting these results. In doing so, we will also further review logistic regression, by briefly fitting a model as in a standard data science pipeline.
+In this lab, you'll practice drawing ROC graphs, calculating AUC, and interpreting these results. In doing so, you will also further review logistic regression, by briefly fitting a model as in a standard data science pipeline.
 
 ## Objectives
 
@@ -15,9 +15,9 @@ You will be able to:
 
 ## Training the Model
 
-Start by repeating the previous modelling steps we have discussed. For this problem, you are given a dataset **mushrooms.csv**. You're first job is to train a LogisticRegression classifier on the dataset to determine whether the mushroom is **e**dible or **p**oisonous. The first column of the dataset *class* indicates whether or not the mushroom is poisonous or edible.
+Start by repeating the previous modelling steps we have discussed. For this problem, you are given a dataset **mushrooms.csv**. Your first job is to train a LogisticRegression classifier on the dataset to determine whether the mushroom is **e**dible or **p**oisonous. The first column of the dataset *class* indicates whether or not the mushroom is poisonous or edible.
 
-**For consistnecy use random_state = 0**
+**For consistency use random_state = 0**
 
 
 ```python
@@ -251,7 +251,7 @@ y = pd.get_dummies(df["class"]).iloc[:,1]
 #Creat Dummy Variables
 X = pd.get_dummies(X)
 # Split the data into train and test sets.
-X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0)
+X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42)
 
 #Fit a model
 logreg = LogisticRegression(fit_intercept = False, C = 1e12) #Starter code
@@ -270,7 +270,7 @@ y_hat_test = logreg.predict(X_test)
 
 ## ROC Metrics
   
-Next, calculate the false positive rate and true positive rate (you can use the built in metrics from SciKit-Learn) of your classifier.
+Next, calculate the false positive rate and true positive rate (you can use the built-in metrics from sci-kit learn) of your classifier.
 
 
 ```python
@@ -359,14 +359,14 @@ plt.show()
 What do you notice about these ROC curves?
 
 ## Your answer here
-Both have an AUC of 1.0, indicating their performance is perfect.
+Both have an AUC of 1.0, indicating their performance is perfect. Note that this is an extreme rarity! Typically, if models perform this well it is too good to be true.
 
 ## Interpretation
 Look at the ROC curve graph from the lesson:  
 
 <img src="images/lesson_roc_graph.png">
 
-Think about the scenario of this model: predicting heart disease. If you tune the current model to have and 82% True Positive Rate, (you've still missed 20% of those with heart disease), what is the False positive rate?
+Think about the scenario of this model: predicting heart disease. If you tune the current model to have an 82% True Positive Rate, (you've still missed 20% of those with heart disease), what is the False positive rate?
 
 
 ```python
@@ -382,12 +382,12 @@ fp = .22 #write the approximate fpr when tpr=.95
 ```
 
 ## Opinion
-In the case of heart disease that we've been talking about, do you find any of the above cases acceptable? How would you tune the model. Describe what this would mean in terms of the number of patients falsely scared of having heart disease and the risk of missing the warning signs for those who do actually have heart disease.
+In the case of heart disease dataset that we've been talking about, do you find any of the above cases acceptable? How would you tune the model? Describe what this would mean in terms of the number of patients falsely scared of having heart disease and the risk of missing the warning signs for those who do actually have heart disease.
 
 ## Your answer here
 
-With such an important decision, such as detecting heart disease, we would hope for more accurate results. In my opinion, the True positive weight is the more important of the two in this scenario. That is, our true positive rate determines the percentage of patients with heart disease who we correctly identify and warn. The false positive rate is still very important, but I would rather accidently scare a few healthy patients and warn them of potentially having heart disease then having missed warnings. That said, the false positive rate becomes rather unacceptably high once the true positive rate exceeds .95. A .95 TPR indicates that out of 100 patients with heart disease we correctly warn 95 of them, but fail to warn 5. At the same time, this has a FPR of nearly .25 meaning that roughly one in four times we incorrectly warn a patient of heart disease when they are actually healthy.
+With such an important decision, such as detecting heart disease, we would hope for more accurate results. The True positive weight is the more important of the two in this scenario. That is, the true positive rate determines the percentage of patients with heart disease who are correctly identified and warned. The false positive rate is still very important, but it would be better rather accidentally scare a few healthy patients and warn them of potentially having heart disease then having missed warnings. That said, the false positive rate becomes rather unacceptably high once the true positive rate exceeds .95. A .95 TPR indicates that out of 100 patients with heart disease we correctly warn 95 of them, but fail to warn 5. At the same time, this has a FPR of nearly .25 meaning that roughly one in four times we incorrectly warn a patient of heart disease when they are actually healthy.
 
 ## Summary
 
-In this lesson we further explored ROC curves and AUC, drawing graphs and then interpreting these results to lead to a more detailed and contextualized understanding of our model's accuracy.
+In this lab you further explored ROC curves and AUC, drawing graphs and then interpreting these results to lead to a more detailed and contextualized understanding of your model's accuracy.
