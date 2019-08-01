@@ -212,10 +212,6 @@ df.head()
 
 
 
-## ROC Metrics
-  
-Next, calculate the false positive rate and true positive rate (you can use the built-in metrics from sci-kit learn) of your classifier.
-
 
 ```python
 # __SOLUTION__ 
@@ -255,11 +251,6 @@ df.info()
 
 
 ```python
-# Your code here
-```
-
-
-```python
 # __SOLUTION__ 
 #Define appropriate X and y
 X = df[df.columns[1:]]
@@ -280,14 +271,19 @@ y_hat_test = logreg.predict(X_test)
 ```
 
     LogisticRegression(C=1000000000000.0, class_weight=None, dual=False,
-              fit_intercept=False, intercept_scaling=1, max_iter=100,
-              multi_class='ovr', n_jobs=1, penalty='l2', random_state=None,
-              solver='liblinear', tol=0.0001, verbose=0, warm_start=False)
+                       fit_intercept=False, intercept_scaling=1, l1_ratio=None,
+                       max_iter=100, multi_class='warn', n_jobs=None, penalty='l2',
+                       random_state=None, solver='warn', tol=0.0001, verbose=0,
+                       warm_start=False)
 
 
-## Drawing the ROC Graph
+    /anaconda3/envs/learn-env/lib/python3.6/site-packages/sklearn/linear_model/logistic.py:432: FutureWarning: Default solver will be changed to 'lbfgs' in 0.22. Specify a solver to silence this warning.
+      FutureWarning)
 
-Next, use the false positive rate and true positive rate to plot the Receiver Operating Characteristic Curve for both the train and test sets.
+
+## ROC Metrics
+  
+Next, calculate the false positive rate and true positive rate (you can use the built-in metrics from sci-kit learn) of your classifier.
 
 
 ```python
@@ -311,11 +307,14 @@ y_train_score = model_log.decision_function(X_train)
 train_fpr, train_tpr, thresholds = roc_curve(y_train, y_train_score)
 ```
 
-## Interpretation:
+## Drawing the ROC Graph
 
-What do you notice about these ROC curves?
+Next, use the false positive rate and true positive rate to plot the Receiver Operating Characteristic Curve for both the train and test sets.
 
-## Your answer here
+
+```python
+# Your code here
+```
 
 
 ```python
@@ -348,15 +347,8 @@ plt.show()
 
 
 
-![png](index_files/index_13_1.png)
+![png](index_files/index_11_1.png)
 
-
-## Interpretation
-Look at the ROC curve graph from the lesson:  
-
-<img src="images/lesson_roc_graph.png">
-
-Think about the scenario of this model: predicting heart disease. If you tune the current model to have an 82% True Positive Rate, (you've still missed 20% of those with heart disease), what is the False positive rate?
 
 
 ```python
@@ -385,12 +377,39 @@ plt.show()
 
 
 
-![png](index_files/index_15_1.png)
+![png](index_files/index_12_1.png)
 
+
+## Interpretation:
+
+What do you notice about these ROC curves?
+
+## Your answer here
+
+
+```python
+# __SOLUTION__
+# Both have an AUC of 1.0, indicating their performance is perfect.
+# Note that this is an extreme rarity! 
+# Typically, if models perform this well it is too good to be true.
+```
+
+## Interpretation
+Look at the ROC curve graph from the lesson:  
+
+<img src="images/lesson_roc_graph.png">
+
+Think about the scenario of this model: predicting heart disease. If you tune the current model to have an 82% True Positive Rate, (you've still missed 20% of those with heart disease), what is the False positive rate?
 
 
 ```python
 fpr = #write the approximate fpr when tpr=.8
+```
+
+
+```python
+# __SOLUTION__ 
+fpr = .17 #write the approximate fpr when tpr=.8
 ```
 
 ## Interpretation 2
@@ -401,23 +420,32 @@ If you instead tune the model to have a 95.2% True Postive Rate, what will the F
 fpr = #write the approximate fpr when tpr=.95
 ```
 
-## Opinion
-In the case of heart disease dataset that we've been talking about, do you find any of the above cases acceptable? How would you tune the model? Describe what this would mean in terms of the number of patients falsely scared of having heart disease and the risk of missing the warning signs for those who do actually have heart disease.
-
 
 ```python
 # __SOLUTION__ 
-fp = .17 #write the approximate fpr when tpr=.8
+fpr = .22 #write the approximate fpr when tpr=.95
 ```
 
+## Opinion
+In the case of heart disease dataset that we've been talking about, do you find any of the above cases acceptable? How would you tune the model? Describe what this would mean in terms of the number of patients falsely scared of having heart disease and the risk of missing the warning signs for those who do actually have heart disease.
+
 ## Your answer here
+
+
+```python
+# __SOLUTION__
+
+# With such an important decision, such as detecting heart disease, we would hope for more accurate results. 
+# The True positive weight is the more important of the two in this scenario. 
+# That is, the true positive rate determines the percentage of patients with heart disease who are correctly identified and warned. 
+# The false positive rate is still very important, but it would be better rather accidentally scare a few healthy patients 
+# and warn them of potentially having heart disease then having missed warnings. 
+# That said, the false positive rate becomes rather unacceptably high once the true positive rate exceeds .95. 
+# A .95 TPR indicates that out of 100 patients with heart disease we correctly warn 95 of them, but fail to warn 5. 
+# At the same time, this has a FPR of nearly .25 meaning that roughly one in four times we incorrectly warn a patient of heart disease 
+# when they are actually healthy.
+```
 
 ## Summary
 
 In this lab you further explored ROC curves and AUC, drawing graphs and then interpreting these results to lead to a more detailed and contextualized understanding of your model's accuracy.
-
-
-```python
-# __SOLUTION__ 
-fp = .22 #write the approximate fpr when tpr=.95
-```
