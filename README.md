@@ -15,7 +15,7 @@ You will be able to:
 
 ## Training the Model
 
-Start by repeating the previous modelling steps we have discussed. For this problem, you are given a dataset **mushrooms.csv**. Your first job is to train a LogisticRegression classifier on the dataset to determine whether the mushroom is **e**dible or **p**oisonous. The first column of the dataset *class* indicates whether or not the mushroom is poisonous or edible.
+Start by repeating the previous modeling steps we have discussed. For this problem, you are given a dataset **mushrooms.csv**. Your first job is to train a LogisticRegression classifier on the dataset to determine whether the mushroom is **e**dible or **p**oisonous. The first column of the dataset *class* indicates whether or not the mushroom is poisonous or edible.
 
 ** For consistency use random_state=0**
 
@@ -256,13 +256,13 @@ df.info()
 X = df[df.columns[1:]]
 y = pd.get_dummies(df["class"]).iloc[:,1]
 
-#Creat Dummy Variables
+#Create Dummy Variables
 X = pd.get_dummies(X)
 # Split the data into train and test sets.
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42)
 
 #Fit a model
-logreg = LogisticRegression(fit_intercept = False, C = 1e12) #Starter code
+logreg = LogisticRegression(fit_intercept = False, C = 1e12, solver='liblinear') #Starter code
 model_log = logreg.fit(X_train, y_train)
 print(model_log) #Preview model params
 
@@ -273,12 +273,8 @@ y_hat_test = logreg.predict(X_test)
     LogisticRegression(C=1000000000000.0, class_weight=None, dual=False,
                        fit_intercept=False, intercept_scaling=1, l1_ratio=None,
                        max_iter=100, multi_class='warn', n_jobs=None, penalty='l2',
-                       random_state=None, solver='warn', tol=0.0001, verbose=0,
+                       random_state=None, solver='liblinear', tol=0.0001, verbose=0,
                        warm_start=False)
-
-
-    /anaconda3/envs/learn-env/lib/python3.6/site-packages/sklearn/linear_model/logistic.py:432: FutureWarning: Default solver will be changed to 'lbfgs' in 0.22. Specify a solver to silence this warning.
-      FutureWarning)
 
 
 ## ROC Metrics
@@ -438,7 +434,7 @@ In the case of heart disease dataset that we've been talking about, do you find 
 # With such an important decision, such as detecting heart disease, we would hope for more accurate results. 
 # The True positive weight is the more important of the two in this scenario. 
 # That is, the true positive rate determines the percentage of patients with heart disease who are correctly identified and warned. 
-# The false positive rate is still very important, but it would be better rather accidentally scare a few healthy patients 
+# The false positive rate is still very important, but it would be better to accidentally scare a few healthy patients 
 # and warn them of potentially having heart disease then having missed warnings. 
 # That said, the false positive rate becomes rather unacceptably high once the true positive rate exceeds .95. 
 # A .95 TPR indicates that out of 100 patients with heart disease we correctly warn 95 of them, but fail to warn 5. 
