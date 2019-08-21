@@ -254,16 +254,16 @@ df.info()
 # __SOLUTION__ 
 #Define appropriate X and y
 X = df[df.columns[1:]]
-y = pd.get_dummies(df["class"]).iloc[:,1]
+y = pd.get_dummies(df["class"], drop_first=True)
 
 #Create Dummy Variables
-X = pd.get_dummies(X)
+X = pd.get_dummies(X, drop_first=True)
 # Split the data into train and test sets.
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42)
 
 #Fit a model
 logreg = LogisticRegression(fit_intercept = False, C = 1e12, solver='liblinear') #Starter code
-model_log = logreg.fit(X_train, y_train)
+model_log = logreg.fit(X_train, y_train.values.ravel())
 print(model_log) #Preview model params
 
 #Predict
