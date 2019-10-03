@@ -41,213 +41,11 @@ df.head()
 ```
 
 
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>class</th>
-      <th>cap-shape</th>
-      <th>cap-surface</th>
-      <th>cap-color</th>
-      <th>bruises</th>
-      <th>odor</th>
-      <th>gill-attachment</th>
-      <th>gill-spacing</th>
-      <th>gill-size</th>
-      <th>gill-color</th>
-      <th>...</th>
-      <th>stalk-surface-below-ring</th>
-      <th>stalk-color-above-ring</th>
-      <th>stalk-color-below-ring</th>
-      <th>veil-type</th>
-      <th>veil-color</th>
-      <th>ring-number</th>
-      <th>ring-type</th>
-      <th>spore-print-color</th>
-      <th>population</th>
-      <th>habitat</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>p</td>
-      <td>x</td>
-      <td>s</td>
-      <td>n</td>
-      <td>t</td>
-      <td>p</td>
-      <td>f</td>
-      <td>c</td>
-      <td>n</td>
-      <td>k</td>
-      <td>...</td>
-      <td>s</td>
-      <td>w</td>
-      <td>w</td>
-      <td>p</td>
-      <td>w</td>
-      <td>o</td>
-      <td>p</td>
-      <td>k</td>
-      <td>s</td>
-      <td>u</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>e</td>
-      <td>x</td>
-      <td>s</td>
-      <td>y</td>
-      <td>t</td>
-      <td>a</td>
-      <td>f</td>
-      <td>c</td>
-      <td>b</td>
-      <td>k</td>
-      <td>...</td>
-      <td>s</td>
-      <td>w</td>
-      <td>w</td>
-      <td>p</td>
-      <td>w</td>
-      <td>o</td>
-      <td>p</td>
-      <td>n</td>
-      <td>n</td>
-      <td>g</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>e</td>
-      <td>b</td>
-      <td>s</td>
-      <td>w</td>
-      <td>t</td>
-      <td>l</td>
-      <td>f</td>
-      <td>c</td>
-      <td>b</td>
-      <td>n</td>
-      <td>...</td>
-      <td>s</td>
-      <td>w</td>
-      <td>w</td>
-      <td>p</td>
-      <td>w</td>
-      <td>o</td>
-      <td>p</td>
-      <td>n</td>
-      <td>n</td>
-      <td>m</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>p</td>
-      <td>x</td>
-      <td>y</td>
-      <td>w</td>
-      <td>t</td>
-      <td>p</td>
-      <td>f</td>
-      <td>c</td>
-      <td>n</td>
-      <td>n</td>
-      <td>...</td>
-      <td>s</td>
-      <td>w</td>
-      <td>w</td>
-      <td>p</td>
-      <td>w</td>
-      <td>o</td>
-      <td>p</td>
-      <td>k</td>
-      <td>s</td>
-      <td>u</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>e</td>
-      <td>x</td>
-      <td>s</td>
-      <td>g</td>
-      <td>f</td>
-      <td>n</td>
-      <td>f</td>
-      <td>w</td>
-      <td>b</td>
-      <td>k</td>
-      <td>...</td>
-      <td>s</td>
-      <td>w</td>
-      <td>w</td>
-      <td>p</td>
-      <td>w</td>
-      <td>o</td>
-      <td>e</td>
-      <td>n</td>
-      <td>a</td>
-      <td>g</td>
-    </tr>
-  </tbody>
-</table>
-<p>5 rows × 23 columns</p>
-</div>
-
-
-
-
 ```python
 # __SOLUTION__ 
 #Further data previews
 df.info()
 ```
-
-    <class 'pandas.core.frame.DataFrame'>
-    RangeIndex: 8124 entries, 0 to 8123
-    Data columns (total 23 columns):
-    class                       8124 non-null object
-    cap-shape                   8124 non-null object
-    cap-surface                 8124 non-null object
-    cap-color                   8124 non-null object
-    bruises                     8124 non-null object
-    odor                        8124 non-null object
-    gill-attachment             8124 non-null object
-    gill-spacing                8124 non-null object
-    gill-size                   8124 non-null object
-    gill-color                  8124 non-null object
-    stalk-shape                 8124 non-null object
-    stalk-root                  8124 non-null object
-    stalk-surface-above-ring    8124 non-null object
-    stalk-surface-below-ring    8124 non-null object
-    stalk-color-above-ring      8124 non-null object
-    stalk-color-below-ring      8124 non-null object
-    veil-type                   8124 non-null object
-    veil-color                  8124 non-null object
-    ring-number                 8124 non-null object
-    ring-type                   8124 non-null object
-    spore-print-color           8124 non-null object
-    population                  8124 non-null object
-    habitat                     8124 non-null object
-    dtypes: object(23)
-    memory usage: 1.4+ MB
-
 
 
 ```python
@@ -269,13 +67,6 @@ print(model_log) #Preview model params
 #Predict
 y_hat_test = logreg.predict(X_test)
 ```
-
-    LogisticRegression(C=1000000000000.0, class_weight=None, dual=False,
-                       fit_intercept=False, intercept_scaling=1, l1_ratio=None,
-                       max_iter=100, multi_class='warn', n_jobs=None, penalty='l2',
-                       random_state=None, solver='liblinear', tol=0.0001, verbose=0,
-                       warm_start=False)
-
 
 ## ROC Metrics
   
@@ -339,13 +130,6 @@ print('AUC: {}'.format(auc(fpr, tpr)))
 plt.show()
 ```
 
-    AUC: 1.0
-
-
-
-![png](index_files/index_11_1.png)
-
-
 
 ```python
 # __SOLUTION__ 
@@ -368,13 +152,6 @@ plt.legend(loc="lower right")
 print('AUC: {}'.format(auc(train_fpr, train_tpr)))
 plt.show()
 ```
-
-    AUC: 1.0
-
-
-
-![png](index_files/index_12_1.png)
-
 
 ## Interpretation:
 
@@ -435,7 +212,7 @@ In the case of heart disease dataset that we've been talking about, do you find 
 # The True positive weight is the more important of the two in this scenario. 
 # That is, the true positive rate determines the percentage of patients with heart disease who are correctly identified and warned. 
 # The false positive rate is still very important, but it would be better to accidentally scare a few healthy patients 
-# and warn them of potentially having heart disease then having missed warnings. 
+# and warn them of potentially having heart disease than having missed warnings. 
 # That said, the false positive rate becomes rather unacceptably high once the true positive rate exceeds .95. 
 # A .95 TPR indicates that out of 100 patients with heart disease we correctly warn 95 of them, but fail to warn 5. 
 # At the same time, this has a FPR of nearly .25 meaning that roughly one in four times we incorrectly warn a patient of heart disease 
