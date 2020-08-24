@@ -15,7 +15,7 @@ You will be able to:
 
 ## Train the model
 
-Start by repeating the previous modeling steps we have discussed. For this problem, you are given a dataset `'mushrooms.csv'`. Your first job is to train a `LogisticRegression` classifier on the dataset to determine whether the mushroom is **e**dible or **p**oisonous. The first column of the dataset *class* indicates whether or not the mushroom is poisonous or edible.
+Start by repeating the previous modeling steps we have discussed. For this problem, you are given a dataset `'mushrooms.csv'`. Your first job is to train a `LogisticRegression` classifier on the dataset to determine whether the mushroom is __e__dible or **p**oisonous. The first column of the dataset `class` indicates whether or not the mushroom is poisonous or edible.
 
 But first, 
 
@@ -99,7 +99,7 @@ print(df.info())
 
 The next step is to define the predictor and target variables. Did you notice all the columns are of type `object`? So you will need to first create dummy variables. 
 
-- First, create dummy a variable for the `'class'` column. Make sure you drop the first level 
+- First, create a dummy variable for the `'class'` column. Make sure you drop the first level 
 - Drop the `'class'` column from `df` and then create dummy variables for all the remaining columns. Again, make sure you drop the first level 
 - Import `train_test_split` 
 - Split the data (`X` and `y`) into training and test sets with 25% in the test set. Set `random_state` to 42 to ensure reproducibility 
