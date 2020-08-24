@@ -15,7 +15,7 @@ You will be able to:
 
 ## Train the model
 
-Start by repeating the previous modeling steps we have discussed. For this problem, you are given a dataset `'mushrooms.csv'`. Your first job is to train a `LogisticRegression` classifier on the dataset to determine whether the mushroom is __e__dible or **p**oisonous. The first column of the dataset `class` indicates whether or not the mushroom is poisonous or edible.
+Start by repeating the previous modeling steps we have discussed. For this problem, you are given a dataset `'mushrooms.csv'`. Your first job is to train a `LogisticRegression` classifier on the dataset to determine whether the mushroom is edible (e) or poisonous (p). The first column of the dataset `class` indicates whether or not the mushroom is poisonous or edible.
 
 But first, 
 
