@@ -1,4 +1,3 @@
-
 # ROC Curves and AUC - Lab
 
 
@@ -146,11 +145,13 @@ What do you notice about these ROC curves? Your answer here:
 
 ## Interpret ROC curves
 
-Look at the following ROC curve:  
+Since the mushroom model is atypically perfect, let's consider another dataset to practice interpreting ROC curves. This heart disease [dataset](https://www.kaggle.com/datasets/johnsmith88/heart-disease-dataset) is widely used in machine learning and a csv file of the data is in the GitHub repository.
+
+Look at the the heart disease's model ROC curve:  
 
 <img src="images/lesson_roc_graph.png">
 
-Think about the scenario of this model: predicting heart disease. If you tune the current model to have an 82% True Positive Rate, (you've still missed 20% of those with heart disease), what is the False positive rate? 
+Think about the scenario of this model: predicting heart disease. If you tune the current model to have an 82% True Positive Rate, (you've still missed 18% of those with heart disease), what is the False positive rate? 
 
 
 ```python
