@@ -149,7 +149,7 @@ Since the mushroom model is atypically perfect, let's consider another dataset t
 
 Look at the the heart disease's model ROC curve:  
 
-<img src="images/lesson_roc_graph.png">
+<img src="https://curriculum-content.s3.amazonaws.com/data-science/images/lesson_roc_graph.png">
 
 Think about the scenario of this model: predicting heart disease. If you tune the current model to have an 82% True Positive Rate, (you've still missed 18% of those with heart disease), what is the False positive rate? 
 
